@@ -7,3 +7,5 @@ As workflows become more and more complex, the file structure also becomes more 
 `file[] dir1 <Ext;exec="mapper.sh",root="dir1">;`
 
 Only change the dir1 to the folder to be mapped.
+
+An example workflow `extMapper.swift` is provided for testing.

@@ -8,12 +8,19 @@ else
     exit 1
 fi
 
-filelist=$(find $rootdir -type f)
+if [ "$3" == "-pattern" ]; then
+    pattern=$4
+else
+    pattern="*"
+fi
 
+filelist=$(find $rootdir -type f )
 counter=0
 
 for ff in $filelist
 do
-	echo "[$counter] $ff"
-	let counter=counter+1
+	if [[ "${ff##*/}" == $pattern ]]; then
+		echo "[$counter] $ff"
+		let counter=counter+1
+	fi 
 done
